@@ -32,6 +32,12 @@ Don't just learn syntax. Build real systems.
 - **[real_world/json_serializer.py](./real_world/json_serializer.py)**: Build a rock-solid JSON encoder for custom objects.
 - **[real_world/event_handler.py](./real_world/event_handler.py)**: Build a cleanup game event router without massive `if/else` chains.
 
+### **Part 3.5: Data Science & AI Patterns**
+**NEW!** Learn why generic functions are cleaner than class-based polymorphism for ML pipelines.
+- **[07_data_science/01_unified_preprocessing.py](./07_data_science/01_unified_preprocessing.py)**: Build a `clean_data()` pipeline that handles Lists, DataFrames, and Arrays.
+- **[07_data_science/02_tensor_compatibility_layer.py](./07_data_science/02_tensor_compatibility_layer.py)**: Write backend-agnostic tensor ops (PyTorch/TF/Numpy).
+- **[07_data_science/03_model_serialization.py](./07_data_science/03_model_serialization.py)**: A universal `save_model()` for Sklearn, PyTorch, and Keras.
+
 ### **Part 4: Deep Dive**
 - **[deep_dive/how_dispatch_works.md](./deep_dive/how_dispatch_works.md)**: Visualizing the internal MRO cache and algorithm.
 - **[deep_dive/performance.py](./deep_dive/performance.py)**: Is it slow? (Spoiler: No, but check the benchmarks).
