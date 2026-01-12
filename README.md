@@ -1,4 +1,4 @@
-# 🧠 The Ultimate Guide to Python's `singledispatch`
+# 🧠 The Ultimate Guide to Python's `singledispatch` & `singledispatchmethod`
 
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -87,7 +87,41 @@ def _(data):
 2.  **Readability**: Each handler is a small, focused function.
 3.  **Inheritance**: It automatically handles subclasses (e.g., if you register `Animal`, it works for `Dog` too).
 
+
+### Dispatching for Class Methods
+If you are working inside a class, use `@singledispatchmethod`. Standard `@singledispatch` will fail because it doesn't handle `self` correctly.
+
+```python
+from functools import singledispatchmethod
+
+class Test:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @singledispatchmethod
+    def ctesting(self, value):
+        print("Unsupported type:", type(value))
+
+    @ctesting.register(str)
+    def _(self, value):
+        print("Name:", value, "| type:", type(value))
+
+    @ctesting.register(int)
+    def _(self, value):
+        print("Age (int):", value, "| type:", type(value))
+
+# 🔹 Object creation
+obj = Test("alex", 2.0)
+
+# 🔹 Method calls
+obj.ctesting(obj.name)   # str → dispatched to str handler
+obj.ctesting(obj.age)    # float → default handler
+obj.ctesting(10)         # int → dispatched to int handler
+```
+
 ---
+
 
 ## ⚠️ Common Pitfalls
 
