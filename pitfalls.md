@@ -1,4 +1,4 @@
-# Common Pitfalls in singledispatch
+<h1 align="center">Common Pitfalls in singledispatch</h1>
 
 ### 1. Using `@singledispatch` on instance methods
 **Problem**: `@singledispatch` dispatches on the *first* argument. For a method, the first argument is `self`. It will try to find a handler for `YourClass`, which is useless.
@@ -36,4 +36,5 @@ def _(x): print("INT")
 
 func(True) # Prints "INT" unless you explicitly register bool!
 ```
+
 
