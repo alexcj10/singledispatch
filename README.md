@@ -1,19 +1,21 @@
-# 🧠 The Ultimate Guide to Python's `singledispatch` & `singledispatchmethod`
+<h1 align="center">The Ultimate Guide to Python's <code>singledispatch</code> & <code>singledispatchmethod</code></h1>
 
-![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.8%2B-blue"/>
+  <img src="https://img.shields.io/badge/license-MIT-green"/>
+</p>
 
 > **Stop writing `if isinstance(...)` chains forever.**  
 > Master the cleanest, most extensible way to write polymorphic Python code.
 
 ---
 
-## 📚 What is this?
+## What is this?
 This repository is a **comprehensive, zero-to-hero course** on `functools.singledispatch` and `singledispatchmethod`. 
 
 It takes you from "I don't know what dispatch is" to "I can architect a plugin system using dispatch".
 
-## 🗺️ Curriculum
+## Curriculum
 
 ### **Part 1: The Foundation**
 - **[01_basics/](./01_basics/)**: The "Naive" way vs The "Pythonic" way.
@@ -44,13 +46,13 @@ Don't just learn syntax. Build real systems.
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### The Problem
 You have a function that needs to handle different types differently.
 
 ```python
-# ❌ The Old Way: Hard to read, hard to extend
+# The Old Way: Hard to read, hard to extend
 def process(data):
     if isinstance(data, str):
         print("Processing string")
@@ -62,7 +64,7 @@ def process(data):
 
 ### The Solution
 ```python
-# ✅ The Singledispatch Way
+# The Singledispatch Way
 from functools import singledispatch
 
 @singledispatch
@@ -123,7 +125,7 @@ obj.ctesting(10)         # int → dispatched to int handler
 ---
 
 
-## ⚠️ Common Pitfalls
+## Common Pitfalls
 
 Check out **[pitfalls.md](./pitfalls.md)** to avoid the top 5 mistakes developers make, such as:
 1.  Using `@singledispatch` on methods (use `@singledispatchmethod`!).
@@ -132,5 +134,6 @@ Check out **[pitfalls.md](./pitfalls.md)** to avoid the top 5 mistakes developer
 
 ---
 
-## 🤝 Contributing
+## Contributing
 Found a new pattern? Open a PR! Let's make this the #1 resource for Python dispatching.
+
